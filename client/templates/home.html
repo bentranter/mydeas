@@ -1,0 +1,48 @@
+<template name="home">
+  <body>
+    <div class="container">
+      <header>
+        <h1>Notes ({{incompleteCount}})</h1>
+
+        <label class="hide-completed">
+          <input type="checkbox" checked="{{hideCompleted}}" />
+          Hide Completed Notes
+        </label>
+
+        {{> loginButtons}}
+
+        {{#if currentUser}}
+          <form class="new-note">
+            <input type="text" name="text" placeholder="Type to add new notes" autocomplete="off" />
+          </form>
+        {{/if}}
+      </header>
+
+      <ul class="tags">
+        <li>Tag1</li>
+        <li>Other tag</li>
+        <li>Tag1</li>
+        <li>Other tag</li>
+        <li>Tag1</li>
+        <li>Other tag</li>
+        <li>Tag1</li>
+        <li>Other tag</li>
+        <li>Tag1</li>
+        <li>Other tag</li>
+        <li>Tag1</li>
+        <li>Other tag</li>
+        <li>Tag1</li>
+        <li>Other tag</li>
+      </ul>
+
+      <ul>
+        {{#each notes}}
+          {{> note}}
+        {{/each}}
+      </ul>
+
+      {{> footer}}
+
+    </div>
+  </body>
+</template>

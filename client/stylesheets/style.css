@@ -146,7 +146,7 @@ footer {
   display: inline-block;
   text-align: center;
   margin: 0 auto;
-  width: 24%;
+  width: 32%;
 }
 
 @media (max-width: 600px) {

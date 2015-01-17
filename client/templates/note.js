@@ -1,5 +1,5 @@
 // Body stuff/events
-Template.body.helpers({
+Template.home.helpers({
   notes: function () {
     if (Session.get("hideCompleted")) {
       // If hide completed is checked, filter tasks
@@ -17,7 +17,7 @@ Template.body.helpers({
   }
 });
 
-Template.body.events({
+Template.home.events({
   "submit .new-note": function(e) {
 
     var note = e.target.text.value;
