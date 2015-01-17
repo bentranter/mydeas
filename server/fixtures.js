@@ -15,6 +15,7 @@ if (Notes.find().count() === 0) {
   	title: 'My great idea',
   	userId: ben._id,
   	author: ben.profile.name,
-  	created: new Date(now - 7*3600*1000)
+  	created: new Date(now - 7*3600*1000),
+  	tags: ['idea', 'test']
   });
 }
