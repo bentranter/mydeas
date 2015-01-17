@@ -14,10 +14,34 @@ Template.home.helpers({
   },
   incompleteCount: function () {
     return Notes.find({checked: {$ne: true}}).count();
+  },
+  tags: function() {
+    return Tags.find({}, {sort: {created: -1}});
   }
 });
 
 Template.home.events({
+  "click .unselected": function(e) {
+
+    e.currentTarget.className = 'selected';
+
+    var tags = Session.get('tags');
+    if (!tags) {
+      tags = [];
+    }
+
+    tags.push(this.tag);
+    Session.set('tags', tags);
+  },
+  "click .selected": function(e) {
+
+    e.currentTarget.className = 'unselected';
+
+    tags = Session.get('tags');
+    var index = tags.indexOf(this.tag);
+    tags.splice(index, 1);
+    Session.set('tags', tags);
+  },
   "submit .new-note": function(e) {
 
     var note = e.target.text.value;
@@ -26,11 +50,18 @@ Template.home.events({
       title: note,
       created: new Date(),
       userId: Meteor.userId(),
-      author: Meteor.user().username
+      author: Meteor.user().username,
+      tags: Session.get('tags')
     });
 
     // Clear the form
     e.target.text.value = "";
+    delete Session.keys['tags'];
+    selected = $('.selected');
+    for(var i = 0;i<selected.length;i++){
+      selected[i].className = 'unselected';
+    }
+    // e.currentTarget.className = 'unselected';
 
     // Prevent random default behaviour (usually using the event does this but whatever)
     return false;

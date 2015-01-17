@@ -19,3 +19,22 @@ if (Notes.find().count() === 0) {
   	tags: ['idea', 'test']
   });
 }
+
+if (Tags.find().count() === 0) {
+   var now = new Date().getTime();
+
+   // Create dummy user but not yet cause I didn't add accounts
+  var benId = Meteor.users.insert({
+    profile: { name: 'Ben Tranter'}
+  });
+
+  // Retrieve user so you can use them as fixture data for note authors
+  var ben = Meteor.users.findOne(benId);
+
+  var tagOne = Tags.insert({
+    tag: 'Tag One',
+    userId: ben._id,
+    author: ben.profile.name,
+    created: new Date(now - 7*3600*1000)
+  });
+}

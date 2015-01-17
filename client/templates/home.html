@@ -18,21 +18,10 @@
         {{/if}}
       </header>
 
-      <ul class="tags">
-        <li>Tag1</li>
-        <li>Other tag</li>
-        <li>Tag1</li>
-        <li>Other tag</li>
-        <li>Tag1</li>
-        <li>Other tag</li>
-        <li>Tag1</li>
-        <li>Other tag</li>
-        <li>Tag1</li>
-        <li>Other tag</li>
-        <li>Tag1</li>
-        <li>Other tag</li>
-        <li>Tag1</li>
-        <li>Other tag</li>
+      <ul class="tags-home">
+        {{#each tags}}
+          {{> tag}}
+        {{/each}}
       </ul>
 
       <ul>

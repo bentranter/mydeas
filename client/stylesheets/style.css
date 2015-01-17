@@ -56,7 +56,7 @@ form {
   position: relative;
 }
 
-.new-note input {
+.new-note input, .new-tag input {
   box-sizing: border-box;
   padding: 10px 0;
   background: transparent;
@@ -66,7 +66,7 @@ form {
   font-size: 1em;
 }
 
-.new-note input:focus{
+.new-note input:focus, .new-tag input:focus{
   outline: 0;
 }
 
@@ -76,7 +76,7 @@ ul {
   background: white;
 }
 
-ul.tags {
+ul.tags-home {
   display: inline-block;
   max-width: 100%;
   white-space: nowrap;
@@ -87,7 +87,7 @@ ul.tags {
   background-color: #ccc;
 }
 
-ul.tags > li {
+ul.tags-home > li {
   display: inline;
   background-color: wheat;
 }
@@ -129,6 +129,15 @@ header .hide-completed {
   float: right;
 }
 
+.selected {
+  background: #eee;
+  padding: 8px 12px;
+}
+
+.unselected {
+  background: #fff;
+}
+
 .toggle-private {
   margin-left: 5px;
 }
@@ -168,7 +177,7 @@ footer {
     clear: both;
   }
 
-  .new-note input {
+  .new-note input, .new-tag input {
     padding-bottom: 5px;
   }
 }

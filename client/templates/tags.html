@@ -1,0 +1,24 @@
+<template name="tags">
+  <div class="container">
+    <header>
+      <h1>Tags</h1>
+
+      {{> loginButtons}}
+
+      {{#if currentUser}}
+        <form class="new-tag">
+          <input type="text" name="text" placeholder="Type to add new tags" autocomplete="off" />
+        </form>
+      {{/if}}
+    </header>
+
+    <ul class="tag-list">
+      {{#each tags}}
+        {{> tag}}
+      {{/each}}
+    </ul>
+
+    {{> footer}}
+
+  </div>
+</template>

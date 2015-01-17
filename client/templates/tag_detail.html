@@ -1,0 +1,17 @@
+<template name="tagDetail">
+  <div class="container">
+
+  <header>
+      <h1>{{tag}}</h1>
+
+      {{> loginButtons}}
+    </header>
+
+  	{{#each notes}}
+        {{> note}}
+    {{/each}}
+
+    {{> footer}}
+
+  </div>
+</template>
