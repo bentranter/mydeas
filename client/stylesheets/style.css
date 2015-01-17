@@ -1,5 +1,8 @@
-*, *:before, *:after {
+html {
   box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 body {
@@ -21,10 +24,11 @@ body {
 }
 
 .container {
+  position: relative;
   max-width: 600px;
   margin: 0 auto;
-  min-height: 100%;
   background: white;
+  min-height: 100vh;
 }
 
 header {
@@ -129,9 +133,34 @@ header .hide-completed {
   margin-left: 5px;
 }
 
+footer {
+  position: fixed;
+  display: inline-block;
+  height: 60px;
+  background: #eee;
+  width: 600px;
+  bottom: 0;
+}
+
+.footer-nav {
+  display: inline-block;
+  text-align: center;
+  margin: 0 auto;
+  width: 24%;
+}
+
 @media (max-width: 600px) {
   li {
     padding: 12px 15px;
+  }
+
+  footer {
+    position: fixed;
+    display: inline-block;
+    height: 60px;
+    background: #eee;
+    width: 100%;
+    bottom: 0;
   }
 
   .search {

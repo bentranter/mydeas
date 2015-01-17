@@ -1,7 +1,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <title>Notes</title>
@@ -21,7 +21,7 @@
 
       {{#if currentUser}}
         <form class="new-note">
-          <input type="text" name="text" placeholder="Type to add new notes" />
+          <input type="text" name="text" placeholder="Type to add new notes" autocomplete="off" />
         </form>
       {{/if}}
     </header>
@@ -48,5 +48,13 @@
         {{> note}}
       {{/each}}
     </ul>
+
+    <footer>
+      <a href="#" class="footer-nav">Test</a>
+      <a href="#" class="footer-nav">Test</a>
+      <a href="#" class="footer-nav">Test</a>
+      <a href="#" class="footer-nav">Test</a>
+    </footer>
+
   </div>
 </body>
