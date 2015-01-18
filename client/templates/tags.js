@@ -9,12 +9,14 @@ Template.tags.events({
 
     var tag = e.target.text.value;
 
-    Tags.insert({
-      tag: tag,
-      created: new Date(),
-      userId: Meteor.userId(),
-      author: Meteor.user().username
-    });
+    if (tag) {
+      Tags.insert({
+        tag: tag,
+        created: new Date(),
+        userId: Meteor.userId(),
+        author: Meteor.user().username
+      });
+    }
 
     // Clear the form
     e.target.text.value = "";

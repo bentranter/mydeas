@@ -21,7 +21,7 @@ Template.home.helpers({
 });
 
 Template.home.events({
-  "click .unselected": function(e) {
+  "click .unselected, touchstart .unselected": function(e) {
 
     e.currentTarget.className = 'selected';
 
@@ -33,7 +33,7 @@ Template.home.events({
     tags.push(this.tag);
     Session.set('tags', tags);
   },
-  "click .selected": function(e) {
+  "click .selected, touchstart .selected": function(e) {
 
     e.currentTarget.className = 'unselected';
 
@@ -46,13 +46,15 @@ Template.home.events({
 
     var note = e.target.text.value;
 
-    Notes.insert({
-      title: note,
-      created: new Date(),
-      userId: Meteor.userId(),
-      author: Meteor.user().username,
-      tags: Session.get('tags')
-    });
+    if (note) {
+      Notes.insert({
+        title: note,
+        created: new Date(),
+        userId: Meteor.userId(),
+        author: Meteor.user().username,
+        tags: Session.get('tags')
+      });
+    }
 
     // Clear the form
     e.target.text.value = "";
