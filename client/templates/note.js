@@ -44,6 +44,11 @@ Template.home.events({
   },
   "submit .new-note": function(e) {
 
+    if (!Session.get('tags')) {
+      alert("Need tag");
+      return false;
+    }
+    
     var note = e.target.text.value;
 
     if (note) {

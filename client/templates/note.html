@@ -1,13 +1,13 @@
 <template name="note">
-  <li class="{{#if checked}}checked{{/if}}">
+  <li>
     <button class="delete">&times;</button>
-    <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
     <span class="text"><strong>{{author}}</strong> - 
       <input type="text" name="text" placeholder="{{title}}" value="{{title}}" class="note" autocomplete="off" />
     </span>
+    <br />
     <span class="text">
       {{#each tags}}
-        <span class="text">{{this}}</span>
+        <span class="tag">{{this}}</span>
       {{/each}}
     </span>
   </li>

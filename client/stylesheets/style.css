@@ -1,3 +1,7 @@
+/* Dark green: #267c6b */
+/* Orange #f1a75b */
+/* Light green:*/
+
 html {
   box-sizing: border-box;
 }
@@ -6,11 +10,8 @@ html {
 }
 
 body {
-  font-family: sans-serif;
-  background-color: #315481;
-  background-image: linear-gradient(to bottom, #315481, #918e82 100%);
-  background-attachment: fixed;
-
+  font-family: 'Calibri', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+  background-color: #d2d2d2;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -27,16 +28,23 @@ body {
   position: relative;
   max-width: 600px;
   margin: 0 auto;
-  background: white;
+  background: #81c8bb;
   min-height: 100vh;
   margin-bottom: 60px;
 }
 
 header {
-  background: #d2edf4;
-  background-image: linear-gradient(to bottom, #d0edf5, #e1e5f0 100%);
+  background: #267c6b;
+  padding: 8px 12px;
+  color: #fff;;
   padding: 20px 15px 15px 15px;
   position: relative;
+}
+
+.logo {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
 }
 
 #login-buttons {
@@ -45,10 +53,19 @@ header {
 
 h1 {
   font-size: 1.5em;
-  margin: 0;
   margin-bottom: 10px;
   display: inline-block;
   margin-right: 1em;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #333;
 }
 
 form {
@@ -57,13 +74,22 @@ form {
   position: relative;
 }
 
+input {
+  background: transparent;
+  border: none;
+
+}
+
+input:focus {
+  outline: 0;
+}
+
 .new-note input, .new-tag input {
   box-sizing: border-box;
   padding: 10px 0;
   background: transparent;
   border: none;
-  width: 100%;
-  padding-right: 80px;
+  width: 84%;
   font-size: 1em;
 }
 
@@ -74,7 +100,8 @@ form {
 ul {
   margin: 0;
   padding: 0;
-  background: white;
+  background: #81c8bb;
+  -webkit-padding-start: 0px;
 }
 
 ul.tags-home {
@@ -84,11 +111,13 @@ ul.tags-home {
   overflow-y: hidden;
   overflow-x: scroll;
   -webkit-overflow-scrolling: touch;
-  padding: 10px 0px;
+  padding: 8px 0;
 }
 
 ul.tags-home > li {
   display: inline;
+  padding: 8px 12px;
+  margin: 0px 1px;
 }
 
 .delete {
@@ -103,12 +132,19 @@ ul.tags-home > li {
 li {
   position: relative;
   list-style: none;
-  padding: 15px;
-  border-bottom: #eee solid 1px;
+  padding: 10px;
+  border-bottom: #267c6b solid 1px;
 }
 
-li .text {
-  margin-left: 10px;
+span .text {
+  line-height: 2.5em;
+}
+
+.tag {
+  background: #267c6b;
+  font-size: 10px;
+  padding: 8px 12px;
+  color: #fff;
 }
 
 li.checked {
@@ -119,30 +155,30 @@ li.checked .text {
   text-decoration: line-through;
 }
 
-li.private {
-  background: #eee;
-  border-color: #ddd;
-}
-
 header .hide-completed {
   float: right;
 }
 
 .selected {
-  background: #eee;
+  background: #267c6b;
+  color: #fff;
+  font-weight: 300;
   padding: 8px 12px;
-  border-radius: 2px;
 }
 
 .unselected {
-  background: #fff;
+  background: #b5e8dd;
+  font-weight: 300;
+  color: #267c6b;
+  padding: 8px 12px;
 }
 
 .submit {
   border: none;
-  border-radius: 3px;
-  background: blue;
+  background: #efa94c !important;
   color: white;
+  width: 15% !important;
+  padding: 5px 10px !important;
 }
 
 .toggle-private {
@@ -153,7 +189,7 @@ footer {
   position: fixed;
   display: inline-block;
   height: 60px;
-  background: #eee;
+  background: #fff;
   width: 600px;
   bottom: 0;
 }
@@ -163,6 +199,7 @@ footer {
   text-align: center;
   margin: 0 auto;
   width: 32%;
+  color: #81c8bb !important;
 }
 
 @media (max-width: 600px) {
@@ -186,5 +223,23 @@ footer {
 
   .new-note input, .new-tag input {
     padding-bottom: 5px;
+    width: 70%;
   }
+
+  .submit {
+    width: 28% !important;
+  }
+}
+
+.octicon-home:before, .octicon-tag:before, .octicon-organization:before {
+  margin-top: 8px;
+  color: #efa94c;
+}
+
+.octicon-chevron-left {
+  color: #fff;
+}
+
+.index-logo {
+  width: 49%;
 }

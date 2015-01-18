@@ -2,19 +2,15 @@
   <body>
     <div class="container">
       <header>
-        <h1>Notes ({{incompleteCount}})</h1>
-
-        <label class="hide-completed">
-          <input type="checkbox" checked="{{hideCompleted}}" />
-          Hide Completed Notes
-        </label>
+        <img src="logo.svg" class="logo" />
+        <h1>myDeas ({{incompleteCount}})</h1>
 
         {{> loginButtons}}
 
         {{#if currentUser}}
           <form class="new-note">
             <input type="text" name="text" placeholder="Type to add new notes" autocomplete="off" />
-            <input type="submit" class="submit" value="submit" />
+            <input type="submit" class="submit" value="Submit" />
           </form>
         {{/if}}
       </header>

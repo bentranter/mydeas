@@ -1,0 +1,21 @@
+<template name="index">
+  <div class="container">
+    <header>
+      <img src="logo.svg" class="logo" />
+      <h1>myDeas</h1>
+      <label class="hide-completed">
+        {{> loginButtons}}
+      </label>
+
+    </header>
+    <div class="index-wrapper">
+      <a href="{{pathFor 'home'}}"><img class="index-logo" src="type.png" /></a>
+      <a href="{{pathFor 'home'}}"><img class="index-logo" src="capture.png" /></a>
+      <a href="{{pathFor 'home'}}"><img class="index-logo" src="paint.png" /></a>
+      <a href="{{pathFor 'home'}}"><img class="index-logo" src="record.png" /></a>
+    </div>
+
+    {{> footer}}
+
+  </div>
+</template>
