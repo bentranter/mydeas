@@ -29,6 +29,7 @@ body {
   margin: 0 auto;
   background: white;
   min-height: 100vh;
+  margin-bottom: 60px;
 }
 
 header {
@@ -84,12 +85,10 @@ ul.tags-home {
   overflow-x: scroll;
   -webkit-overflow-scrolling: touch;
   padding: 10px 0px;
-  background-color: #ccc;
 }
 
 ul.tags-home > li {
   display: inline;
-  background-color: wheat;
 }
 
 .delete {
@@ -132,10 +131,18 @@ header .hide-completed {
 .selected {
   background: #eee;
   padding: 8px 12px;
+  border-radius: 2px;
 }
 
 .unselected {
   background: #fff;
+}
+
+.submit {
+  border: none;
+  border-radius: 3px;
+  background: blue;
+  color: white;
 }
 
 .toggle-private {

@@ -14,13 +14,14 @@
         {{#if currentUser}}
           <form class="new-note">
             <input type="text" name="text" placeholder="Type to add new notes" autocomplete="off" />
+            <input type="submit" class="submit" value="submit" />
           </form>
         {{/if}}
       </header>
 
       <ul class="tags-home">
         {{#each tags}}
-          {{> tag}}
+          {{> selectedTag}}
         {{/each}}
       </ul>
 

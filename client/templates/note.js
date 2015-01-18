@@ -58,7 +58,8 @@ Template.home.events({
     e.target.text.value = "";
     delete Session.keys['tags'];
     selected = $('.selected');
-    for(var i = 0;i<selected.length;i++){
+
+    for(var i = 0; i < selected.length; i++){
       selected[i].className = 'unselected';
     }
     // e.currentTarget.className = 'unselected';
@@ -68,6 +69,11 @@ Template.home.events({
   },
   "change .hide-completed input": function (e) {
     Session.set("hideCompleted", e.target.checked);
+  },
+  "change .note": function(e) {
+    var note = e.currentTarget.value;
+
+    Notes.update({_id: this._id}, {$set: {title: note}});
   }
 });
 
@@ -78,6 +84,11 @@ Template.note.events({
     Notes.update(this._id, {$set: {checked: ! this.checked}});
   },
   "click .delete": function () {
-    Notes.remove(this._id);
+    if (confirm('Are you sure?')) {
+      Notes.remove(this._id);
+    }
   }
 });
+
+// submit button
+// confirm to delete lol

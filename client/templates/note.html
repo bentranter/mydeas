@@ -2,7 +2,9 @@
   <li class="{{#if checked}}checked{{/if}}">
     <button class="delete">&times;</button>
     <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
-    <span class="text"><strong>{{author}}</strong> - {{title}}</span>
+    <span class="text"><strong>{{author}}</strong> - 
+      <input type="text" name="text" placeholder="{{title}}" value="{{title}}" class="note" autocomplete="off" />
+    </span>
     <span class="text">
       {{#each tags}}
         <span class="text">{{this}}</span>

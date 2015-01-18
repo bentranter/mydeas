@@ -21,5 +21,10 @@ Template.tags.events({
 
     // Prevent random default behaviour (usually using the event does this but whatever)
     return false;
+  },
+  "click .delete": function () {
+    if (confirm('Are you sure?')) {
+      Tags.remove(this._id);
+    }
   }
 });
