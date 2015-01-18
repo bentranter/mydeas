@@ -33,7 +33,7 @@ Template.home.events({
     tags.push(this.tag);
     Session.set('tags', tags);
   },
-  "click .selected, touchstart .selected": function(e) {
+  "click .selected, touchstart .selected, tapone .selected": function(e) {
 
     e.currentTarget.className = 'unselected';
 
@@ -48,7 +48,7 @@ Template.home.events({
       alert("Need tag");
       return false;
     }
-    
+
     var note = e.target.text.value;
 
     if (note) {
