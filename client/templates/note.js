@@ -21,7 +21,7 @@ Template.home.helpers({
 });
 
 Template.home.events({
-  "click .unselected, touchstart .unselected": function(e) {
+  "click .unselected": function(e) {
 
     e.currentTarget.className = 'selected';
 
@@ -33,7 +33,7 @@ Template.home.events({
     tags.push(this.tag);
     Session.set('tags', tags);
   },
-  "click .selected, touchstart .selected, tapone .selected": function(e) {
+  "click .selected": function(e) {
 
     e.currentTarget.className = 'unselected';
 
