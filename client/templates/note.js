@@ -21,7 +21,7 @@ Template.home.helpers({
 });
 
 Template.home.events({
-  "click .unselected": function(e) {
+  "click .unselected, touchstart .unselected": function(e) {
 
     e.currentTarget.className = 'selected';
 
@@ -33,7 +33,7 @@ Template.home.events({
     tags.push(this.tag);
     Session.set('tags', tags);
   },
-  "click .selected": function(e) {
+  "click .selected, touchstart .selected": function(e) {
 
     e.currentTarget.className = 'unselected';
 
@@ -96,6 +96,3 @@ Template.note.events({
     }
   }
 });
-
-// submit button
-// confirm to delete lol

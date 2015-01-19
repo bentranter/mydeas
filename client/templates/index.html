@@ -1,16 +1,19 @@
 <template name="index">
   <div class="container">
     <header>
-      <img src="logo.svg" class="logo" />
       <h1>myDeas</h1>
-      {{> loginButtons}}
-
+      <div class="account-user">
+        {{> loginButtons}}
+      </div>
     </header>
-    <div class="index-wrapper">
-      <a href="{{pathFor 'home'}}"><img class="index-logo" src="type.png" /></a>
-      <a href="{{pathFor 'home'}}"><img class="index-logo" src="capture.png" /></a>
-      <a href="{{pathFor 'home'}}"><img class="index-logo" src="paint.png" /></a>
-      <a href="{{pathFor 'home'}}"><img class="index-logo" src="record.png" /></a>
+    <div class="account-login-wrapper">
+      <form class="account-login">
+        <div class="account-input-heading">Username</div>
+        <input type="text" name="text" placeholder="Username" class="account-input-username" autocomplete="off" />
+        <div class="account-input-heading">Password</div>
+        <input type="password" name="password" placeholder="" class="account-input-password" autocomplete="off" />
+        <input type="submit" class="submit" value="Submit" />
+      </form>
     </div>
 
     {{> footer}}
