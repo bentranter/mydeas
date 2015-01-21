@@ -1,7 +1,13 @@
 <template name="footer">
   <footer>
-    <a href="{{pathFor 'home'}}" class="footer-nav-active">Home</a>
-    <a href="{{pathFor 'tags'}}" class="footer-nav">Tags</a>
-    <a href="#" class="footer-nav share">Share</a>
+    <div class="row">
+      <div class="col s12">
+        <ul class="tabs">
+          <li class="tab col s4"><a href="{{pathFor 'home'}}">Home</a></li>
+          <li class="tab col s4"><a class="active" href="{{pathFor 'tags'}}">Tags</a></li>
+          <li class="tab col s4 share"><a href="#">Test 3</a></li>
+        </ul>
+      </div>
+    </div>
   </footer>
 </template>

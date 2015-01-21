@@ -3,9 +3,7 @@
     <div class="container">
       <header>
         <img src="logo.svg" class="logo" />
-        <h1>myDeas ({{incompleteCount}})</h1>
-
-        {{> loginButtons}}
+        <h1>myDeas ({{incompleteCount}}{{username}})</h1>
 
         {{#if currentUser}}
           <form class="new-note">
